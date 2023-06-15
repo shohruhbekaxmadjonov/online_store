@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>Place Order</h2>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">Price: ${{ product.price }}</p>
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="count">Quantity:</label>
+                    <input type="number" class="form-control" id="count" name="count" min="1" required>
+                </div>
+                <p>Total Amount: ${{ total_amount }}</p>
+                <input type="submit" value="Confirm Order" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+{% endblock content %}

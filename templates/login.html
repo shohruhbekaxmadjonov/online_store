@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+        <form class="w-25 mx-auto" method="POST" novalidate>
+            {% csrf_token %}
+            <h2>Login</h2>
+            {{ form|crispy }}
+            <input type="submit" value="Login"/>
+
+            <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        </form>
+
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>Order Placed</h2>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">Price: ${{ product.price }}</p>
+            <p>Quantity: {{ count }}</p>
+            <p>Total Amount: ${{ total_amount }}</p>
+            <p>Thank you for placing your order!</p>
+        </div>
+    </div>
+{% endblock content %}
